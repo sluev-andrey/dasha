@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="utf-8"><title>check</title>
+<style>html,body{margin:0}iframe{border:0}</style></head>
+<body>
+<pre id="out">pending</pre>
+<iframe id="f" src="/index.html" width="1440" height="1000"></iframe>
+<script>
+const out = [];
+const f = document.getElementById('f');
+f.addEventListener('load', () => {
+  setTimeout(() => {
+    try {
+      const d = f.contentDocument, w = f.contentWindow;
+      const trust = d.querySelector('.trust');
+      const cs = getComputedStyle(trust);
+      out.push('trust: display=' + cs.display + ' cols=' + cs.gridTemplateColumns);
+      const media = d.querySelector('.trust__media');
+      const mr = media.getBoundingClientRect();
+      out.push('media: ' + Math.round(mr.width) + 'x' + Math.round(mr.height) +
+               ' | позиция в сетке: ' + getComputedStyle(media).gridColumnStart + '/' + getComputedStyle(media).gridRowStart);
+      const img = media.querySelector('img');
+      out.push('media img: natural=' + img.naturalWidth + 'x' + img.naturalHeight +
+               ' rendered=' + Math.round(img.getBoundingClientRect().width) + 'x' + Math.round(img.getBoundingClientRect().height) +
+               ' objectFit=' + getComputedStyle(img).objectFit);
+
+      // координаты всех элементов сетки -> проверяем раскладку
+      const cells = Array.from(trust.children).map((el) => {
+        const r = el.getBoundingClientRect();
+        return el.className.split(' ')[0] + ' @ ' + Math.round(r.left - mr.left) + ',' + Math.round(r.top - mr.top) +
+               ' ' + Math.round(r.width) + 'x' + Math.round(r.height);
+      });
+      out.push('элементы:');
+      cells.forEach((c) => out.push('   ' + c));
+
+      const cards = d.querySelectorAll('.trust-card');
+      out.push('карточек: ' + cards.length +
+               ' | рядов: ' + new Set(Array.from(cards).map((c) => Math.round(c.getBoundingClientRect().top))).size +
+               ' | видимых иконок: ' + d.querySelectorAll('.trust-card__icon svg').length);
+
+      out.push('переполнение по X: ' + (d.documentElement.scrollWidth - w.innerWidth) + 'px');
+      const broken = Array.from(d.images).filter((i) => !i.complete || i.naturalWidth === 0).map((i) => i.getAttribute('src'));
+      out.push('битых картинок: ' + (broken.join(', ') || 'нет'));
+
+      // текст не должен вылезать из карточек
+      const overflow = [];
+      d.querySelectorAll('.trust-card').forEach((c, i) => {
+        const inner = c.scrollHeight - c.clientHeight;
+        if (inner > 1) overflow.push('карточка ' + (i + 1) + ' (+' + inner + 'px)');
+        c.querySelectorAll('h3,p').forEach((t) => {
+          if (t.scrollHeight - t.clientHeight > 1) overflow.push('текст в карточке ' + (i + 1));
+        });
+      });
+      out.push('переполнение контента: ' + (overflow.join(', ') || 'нет'));
+
+      // размеры иконок и заголовков
+      const icon = d.querySelector('.trust-card__icon');
+      const ir = icon.getBoundingClientRect();
+      out.push('иконка: ' + Math.round(ir.width) + 'x' + Math.round(ir.height) +
+               ' radius=' + getComputedStyle(icon).borderRadius +
+               ' bg=' + getComputedStyle(icon).backgroundColor);
+      out.push('h3 первого блока: ' + getComputedStyle(d.querySelector('.trust-card h3')).fontFamily.split(',')[0]);
+      out.push('старые классы .safety/.checklist в DOM: ' + d.querySelectorAll('.safety,.checklist').length);
+      document.getElementById('out').textContent = out.join('\n');
+    } catch (e) {
+      document.getElementById('out').textContent = out.join('\n') + '\nERR ' + e.message;
+    }
+  }, 2500);
+});
+</script>
+</body></html>

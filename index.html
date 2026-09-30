@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<!--
+  ЧТО ЗАМЕНИТЬ, КОГДА БУДУТ РЕАЛЬНЫЕ ДАННЫЕ (ищите слово ЗАМЕНИТЬ по файлу):
+  1) Фото: assets/img/avatar.jpg, about.jpg, cabinet.jpg и пары before-1..3 / after-1..3.
+     Сейчас это временные фото с Wikimedia Commons (см. credits.html). Замените их своими,
+     сохранив имена файлов и пропорции: avatar/about — 4:5, cabinet — 3:2, до/после — 4:3.
+  2) Телефон: +7 (900) 000-00-00  →  tel:+79000000000
+  3) Мессенджеры: wa.me/79000000000 и t.me/username
+  4) Адрес кабинета: «г. Тула, ул. Примерная, 1»
+  5) Цены: в карточках услуг заменить «цена по запросу».
+  6) Отправку формы: js/main.js, блок «form» — там помечено TODO.
+-->
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Дарья — косметолог в Туле | Массаж лица, чистки, пилинги, аппаратная косметология</title>
+<meta name="description" content="Косметолог с медицинским образованием. 13 лет практики, более 15 000 процедур. Массаж лица (6 техник), чистки, пилинги, аппаратная косметология, шугаринг. Профессиональная косметика GiGi (Израиль). Тула.">
+<meta name="theme-color" content="#FBF7F1">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Дарья — косметолог в Туле">
+<meta property="og:description" content="13 лет в профессии, 15 000+ процедур. Массаж лица, чистки, пилинги, аппаратная косметология.">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">К содержанию</a>
+
+<!-- ============================== HEADER ============================== -->
+<header class="header" id="header">
+  <div class="header__progress" aria-hidden="true"><span id="scrollProgress"></span></div>
+  <div class="container header__inner">
+    <a class="logo" href="index.html" aria-label="Дарья, косметолог — на главную">
+      <span class="logo__mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="32" height="32"><path d="M16 3c5 4.2 8 8.4 8 13a8 8 0 1 1-16 0c0-4.6 3-8.8 8-13Z" fill="currentColor" opacity=".9"/><circle cx="16" cy="17" r="3.4" fill="#FBF7F1"/></svg>
+      </span>
+      <span class="logo__text">
+        <strong>Дарья</strong>
+        <em>косметолог · Тула</em>
+      </span>
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Основная навигация">
+      <a href="#about">Обо мне</a>
+      <a href="#services">Услуги</a>
+      <a href="#techniques">Техники</a>
+      <a href="#results">До / После</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#faq">Вопросы</a>
+      <a class="nav__cta" href="#booking">Записаться</a>
+    </nav>
+
+    <button class="burger" id="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============================== HERO ============================== -->
+  <section class="hero">
+    <div class="hero__glow" aria-hidden="true"></div>
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <p class="eyebrow" data-reveal>
+          <span class="eyebrow__dot"></span> Новое имя в Туле · практика с 2013 года
+        </p>
+        <h1 class="hero__title" data-reveal data-reveal-delay="60">
+          Косметолог<br>
+          <em>с медицинским</em><br>
+          образованием
+        </h1>
+        <p class="hero__lead" data-reveal data-reveal-delay="120">
+          Меня зовут Дарья. 13 лет в профессии, более 15 000 процедур и сотни благодарных клиентов.
+          Я недавно переехала в Тулу — и хочу познакомиться через работу: аккуратно, честно и с видимым результатом.
+        </p>
+        <div class="hero__actions" data-reveal data-reveal-delay="180">
+          <a class="btn btn--primary" href="#booking">
+            Записаться на процедуру
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 12h13m-5-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="btn btn--ghost" href="#services">Смотреть услуги</a>
+        </div>
+
+        <dl class="hero__stats" data-reveal data-reveal-delay="240">
+          <div class="stat">
+            <dt>Опыт</dt>
+            <dd><span class="stat__num" data-count="13">13</span> лет</dd>
+          </div>
+          <div class="stat">
+            <dt>Процедур</dt>
+            <dd><span class="stat__num" data-count="15000">15 000</span>+</dd>
+          </div>
+          <div class="stat">
+            <dt>Техник массажа лица</dt>
+            <dd><span class="stat__num" data-count="6">6</span></dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="hero__media" data-reveal data-reveal-delay="140">
+        <div class="hero__photo">
+          <img src="assets/img/avatar.jpg" alt="Портрет косметолога Дарьи" width="900" height="1125">
+        </div>
+        <div class="badge badge--top">
+          <span class="badge__icon" aria-hidden="true">✦</span>
+          <span><strong>GiGi</strong><br>Израиль · проф. косметика</span>
+        </div>
+        <div class="badge badge--bottom">
+          <span class="badge__icon" aria-hidden="true">◈</span>
+          <span><strong>Стерильно</strong><br>одноразовые материалы</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>массаж лица · 6 техник</span><span>чистки</span><span>пилинги</span><span>аппаратная косметология</span><span>шугаринг</span><span>уход GiGi</span>
+        <span>массаж лица · 6 техник</span><span>чистки</span><span>пилинги</span><span>аппаратная косметология</span><span>шугаринг</span><span>уход GiGi</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== ABOUT ============================== -->
+  <section class="section" id="about">
+    <div class="container about">
+      <div class="about__media" data-reveal>
+        <img class="about__img" src="assets/img/about.jpg" alt="Дарья за работой" width="900" height="1125" loading="lazy">
+        <div class="about__card">
+          <span class="about__card-num">15 000+</span>
+          <span class="about__card-text">процедур<br>за 13 лет практики</span>
+        </div>
+      </div>
+
+      <div class="about__content">
+        <p class="eyebrow" data-reveal><span class="eyebrow__dot"></span> Обо мне</p>
+        <h2 class="section__title" data-reveal data-reveal-delay="60">
+          Медицинский подход<br>и <em>руки, которые чувствуют</em>
+        </h2>
+        <div class="prose" data-reveal data-reveal-delay="120">
+          <p>
+            Я косметолог с медицинским образованием. Это значит, что перед процедурой я смотрю не только
+            на кожу, но и на её состояние в целом: тип, реактивность, сосуды, склонность к отёкам и пигментации.
+          </p>
+          <p>
+            Работаю на профессиональной косметике <strong>GiGi (Израиль)</strong> — с дипломами, сертификатами
+            и стерильным расходным материалом. Никаких «на глазок» и обещаний чудес: сначала диагностика,
+            потом — план.
+          </p>
+        </div>
+
+        <ul class="chips" data-reveal data-reveal-delay="180">
+          <li>Медицинское образование</li>
+          <li>Дипломы и сертификаты</li>
+          <li>Косметика GiGi, Израиль</li>
+          <li>Одноразовые материалы</li>
+          <li>Индивидуальный план ухода</li>
+        </ul>
+
+        <blockquote class="signature" data-reveal data-reveal-delay="220">
+          «Мне важно, чтобы после процедуры вы ушли не только с другим лицом,
+          но и с пониманием, что делать дальше».
+          <cite>— Дарья</cite>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== SERVICES ============================== -->
+  <section class="section section--tint" id="services">
+    <div class="container">
+      <header class="section__head">
+        <div>
+          <p class="eyebrow" data-reveal><span class="eyebrow__dot"></span> Услуги</p>
+          <h2 class="section__title" data-reveal data-reveal-delay="60">Что я делаю</h2>
+        </div>
+        <p class="section__note" data-reveal data-reveal-delay="120">
+          Подберу процедуру под ваш запрос и состояние кожи. Если сомневаетесь — напишите,
+          помогу выбрать формат.
+        </p>
+      </header>
+
+      <div class="cards">
+        <article class="card" data-reveal>
+          <span class="card__index">01</span>
+          <h3 class="card__title">Массаж лица</h3>
+          <p class="card__text">6 различных техник: от классического и лимфодренажного до буккального. Работа с овалом, тонусом и отёчностью.</p>
+          <p class="card__meta"><span>60–80 мин</span><span>цена по запросу</span></p>
+        </article>
+
+        <article class="card" data-reveal data-reveal-delay="60">
+          <span class="card__index">02</span>
+          <h3 class="card__title">Чистки</h3>
+          <p class="card__text">Механическая и комбинированная чистка с предварительным размягчением. Аккуратно, без травмирования кожи.</p>
+          <p class="card__meta"><span>60–90 мин</span><span>цена по запросу</span></p>
+        </article>
+
+        <article class="card" data-reveal data-reveal-delay="120">
+          <span class="card__index">03</span>
+          <h3 class="card__title">Пилинги</h3>
+          <p class="card__text">Обновление кожи: кислотные и энзимные составы под тип и чувствительность. Курсом или как разовая процедура.</p>
+          <p class="card__meta"><span>40–60 мин</span><span>цена по запросу</span></p>
+        </article>
+
+        <article class="card" data-reveal>
+          <span class="card__index">04</span>
+          <h3 class="card__title">Аппаратная косметология</h3>
+          <p class="card__text">Аппаратные методики для тонуса, увлажнения и улучшения микрорельефа кожи. Комбинируется с уходом.</p>
+          <p class="card__meta"><span>40–70 мин</span><span>цена по запросу</span></p>
+        </article>
+
+        <article class="card" data-reveal data-reveal-delay="60">
+          <span class="card__index">05</span>
+          <h3 class="card__title">Шугаринг</h3>
+          <p class="card__text">Сахарная депиляция лица и тела. Мягко для кожи, подходит даже для чувствительных зон.</p>
+          <p class="card__meta"><span>15–60 мин</span><span>цена по запросу</span></p>
+        </article>
+
+        <article class="card card--accent" data-reveal data-reveal-delay="120">
+          <span class="card__index">06</span>
+          <h3 class="card__title">Комплексный уход</h3>
+          <p class="card__text">Программа «всё в одном»: очищение, массаж, маска, финишный уход. Идеально для первого знакомства.</p>
+          <p class="card__meta"><span>90 мин</span><span>цена по запросу</span></p>
+          <a class="card__link" href="#booking">Записаться <span aria-hidden="true">→</span></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== TECHNIQUES ============================== -->
+  <section class="section" id="techniques">
+    <div class="container">
+      <header class="section__head">
+        <div>
+          <p class="eyebrow" data-reveal><span class="eyebrow__dot"></span> 6 техник</p>
+          <h2 class="section__title" data-reveal data-reveal-delay="60">Массаж лица,<br><em>который работает</em></h2>
+        </div>
+        <p class="section__note" data-reveal data-reveal-delay="120">
+          Техника подбирается после диагностики: кому-то нужен дренаж, кому-то — тонус,
+          а кому-то мягкая работа с глубокими тканями.
+        </p>
+      </header>
+
+      <div class="techniques" data-tabs>
+        <ol class="techniques__list" role="tablist" aria-orientation="vertical" aria-label="Техники массажа лица">
+          <li role="presentation"><button class="tech-tab is-active" role="tab" aria-selected="true" aria-controls="tech-1" id="tab-1" type="button"><span>01</span> Классический</button></li>
+          <li role="presentation"><button class="tech-tab" role="tab" aria-selected="false" aria-controls="tech-2" id="tab-2" type="button"><span>02</span> Лимфодренажный</button></li>
+          <li role="presentation"><button class="tech-tab" role="tab" aria-selected="false" aria-controls="tech-3" id="tab-3" type="button"><span>03</span> Пластический</button></li>
+          <li role="presentation"><button class="tech-tab" role="tab" aria-selected="false" aria-controls="tech-4" id="tab-4" type="button"><span>04</span> Буккальный</button></li>
+          <li role="presentation"><button class="tech-tab" role="tab" aria-selected="false" aria-controls="tech-5" id="tab-5" type="button"><span>05</span> Скульптурный</button></li>
+          <li role="presentation"><button class="tech-tab" role="tab" aria-selected="false" aria-controls="tech-6" id="tab-6" type="button"><span>06</span> Испанский</button></li>
+        </ol>
+
+        <div class="techniques__panels">
+          <div class="tech-panel is-active" id="tech-1" role="tabpanel" aria-labelledby="tab-1">
+            <h3>Классический массаж лица</h3>
+            <p>Базовая техника по линиям лимфотока: снимает напряжение, улучшает микроциркуляцию и цвет лица. Хороший старт, если вы никогда не делали массаж лица.</p>
+            <ul class="tech-panel__list"><li>тонус и свежий вид</li><li>подходит для чувствительной кожи</li><li>60 минут</li></ul>
+          </div>
+          <div class="tech-panel" id="tech-2" role="tabpanel" aria-labelledby="tab-2" hidden>
+            <h3>Лимфодренажный массаж</h3>
+            <p>Работа с отёчностью и застоем: мягкие дренажные движения, которые «собирают» лишнюю жидкость и убирают пастозность. Часто выбирают утром перед событиями.</p>
+            <ul class="tech-panel__list"><li>против отёков и «тяжёлого» лица</li><li>виден эффект сразу</li><li>60 минут</li></ul>
+          </div>
+          <div class="tech-panel" id="tech-3" role="tabpanel" aria-labelledby="tab-3" hidden>
+            <h3>Пластический массаж</h3>
+            <p>Более интенсивная проработка мышц лица: возвращает тонус, помогает работе мимических мышц, визуально подтягивает контур.</p>
+            <ul class="tech-panel__list"><li>работа с овалом лица</li><li>курсом 8–10 процедур</li><li>70 минут</li></ul>
+          </div>
+          <div class="tech-panel" id="tech-4" role="tabpanel" aria-labelledby="tab-4" hidden>
+            <h3>Буккальный массаж</h3>
+            <p>Внутриротовая техника: проработка мышц изнутри. Заметно улучшает объём и контур щёк, работает с зажимами, которые снаружи не достать.</p>
+            <ul class="tech-panel__list"><li>для выраженного лифтинг-эффекта</li><li>курс 6–10 процедур</li><li>80 минут</li></ul>
+          </div>
+          <div class="tech-panel" id="tech-5" role="tabpanel" aria-labelledby="tab-5" hidden>
+            <h3>Скульптурный массаж</h3>
+            <p>Моделирующая техника, которая формирует чёткие линии скул и челюсти. Сочетается с уходом и аппаратными процедурами.</p>
+            <ul class="tech-panel__list"><li>выразительный контур</li><li>комбинируется с чисткой</li><li>70 минут</li></ul>
+          </div>
+          <div class="tech-panel" id="tech-6" role="tabpanel" aria-labelledby="tab-6" hidden>
+            <h3>Испанский массаж</h3>
+            <p>Комплексная техника с глубоким воздействием на мышцы, фасции и кожу. Самый «результативный» формат, если нужен заметный эффект.</p>
+            <ul class="tech-panel__list"><li>глубокий лифтинг</li><li>индивидуальный подбор интенсивности</li><li>80 минут</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== BEFORE / AFTER ============================== -->
+  <section class="section section--dark" id="results">
+    <div class="container">
+      <header class="section__head section__head--center">
+        <p class="eyebrow eyebrow--light" data-reveal><span class="eyebrow__dot"></span> Результаты</p>
+        <h2 class="section__title" data-reveal data-reveal-delay="60">До и после</h2>
+      </header>
+
+      <div class="compare-block" data-reveal data-reveal-delay="160">
+        <div class="compare" data-compare data-before="assets/img/before-1.jpg" data-after="assets/img/after-1.jpg">
+          <div class="compare__layer compare__layer--after">
+            <img src="assets/img/after-1.jpg" alt="Результат после процедуры" data-compare-img="after" width="900" height="675" loading="lazy">
+          </div>
+          <div class="compare__layer compare__layer--before">
+            <img src="assets/img/before-1.jpg" alt="Состояние кожи до процедуры" data-compare-img="before" width="900" height="675" loading="lazy">
+          </div>
+          <span class="compare__tag compare__tag--before">До</span>
+          <span class="compare__tag compare__tag--after">После</span>
+          <div class="compare__handle" data-compare-handle aria-hidden="true">
+            <span class="compare__knob">
+              <svg viewBox="0 0 24 24" width="20" height="20"><path d="M9 7 5 12l4 5m6-10 4 5-4 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </div>
+          <input class="compare__range" type="range" min="0" max="100" value="50" step="0.1" aria-label="Сравнение фото до и после">
+        </div>
+
+        <div class="compare__cases" role="group" aria-label="Выбор примера">
+          <button class="case is-active" type="button" data-case data-before="assets/img/before-1.jpg" data-after="assets/img/after-1.jpg" data-caption="Массаж лица · курс 8 процедур">
+            <span class="case__thumb"><img src="assets/img/after-1.jpg" alt="" width="80" height="60" loading="lazy"></span>
+            <span class="case__text"><strong>Овал и отёчность</strong><em>массаж лица, 8 процедур</em></span>
+          </button>
+          <button class="case" type="button" data-case data-before="assets/img/before-2.jpg" data-after="assets/img/after-2.jpg" data-caption="Комбинированная чистка + уход GiGi">
+            <span class="case__thumb"><img src="assets/img/after-2.jpg" alt="" width="80" height="60" loading="lazy"></span>
+            <span class="case__text"><strong>Забитые поры</strong><em>чистка + уход GiGi</em></span>
+          </button>
+          <button class="case" type="button" data-case data-before="assets/img/before-3.jpg" data-after="assets/img/after-3.jpg" data-caption="Пилинг · курс 4 процедуры">
+            <span class="case__thumb"><img src="assets/img/after-3.jpg" alt="" width="80" height="60" loading="lazy"></span>
+            <span class="case__text"><strong>Тон и пигментация</strong><em>пилинг, 4 процедуры</em></span>
+          </button>
+        </div>
+        <p class="compare__caption" data-compare-caption>Массаж лица · курс 8 процедур</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== SAFETY ============================== -->
+  <section class="section" id="safety">
+    <div class="container">
+      <header class="section__head">
+        <div>
+          <p class="eyebrow" data-reveal><span class="eyebrow__dot"></span> Безопасность</p>
+          <h2 class="section__title" data-reveal data-reveal-delay="60">Стерильно, честно,<br><em>с документами</em></h2>
+        </div>
+        <p class="section__note" data-reveal data-reveal-delay="120">
+          В косметологии доверие важнее обещаний. Поэтому всё, что касается гигиены и квалификации,
+          у меня открыто: покажу дипломы, вскрою упаковку с инструментом при вас, объясню состав средств.
+        </p>
+      </header>
+
+      <ul class="trust">
+        <li class="trust__media" data-reveal>
+          <img src="assets/img/cabinet.jpg" alt="Кабинет для процедур" width="1200" height="800" loading="lazy">
+          <span class="trust__chip">
+            <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true"><path d="m9 12 2 2 4-4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Кабинет в Туле
+          </span>
+          <div class="trust__caption">
+            <strong>Вскрываю упаковку при вас</strong>
+            <span>Так вы видите, что всё стерильно, — без слов на веру.</span>
+          </div>
+        </li>
+
+        <li class="trust-card" data-reveal data-reveal-delay="60">
+          <span class="trust-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 3 7.5l9 4.5 9-4.5L12 3Z"/><path d="m3 12 9 4.5 9-4.5"/><path d="m3 16.5 9 4.5 9-4.5"/></svg>
+          </span>
+          <div class="trust-card__text">
+            <h3>Одноразовые материалы</h3>
+            <p>Иглы, шпатели, салфетки и перчатки — вскрываю новую упаковку при вас.</p>
+          </div>
+        </li>
+
+        <li class="trust-card" data-reveal data-reveal-delay="90">
+          <span class="trust-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s6 6.4 6 10.4a6 6 0 0 1-12 0C6 9.4 12 3 12 3Z"/><path d="M9.6 14.2a2.6 2.6 0 0 0 2.4 2.6"/></svg>
+          </span>
+          <div class="trust-card__text">
+            <h3>Дезинфекция и стерилизация</h3>
+            <p>Полная обработка инструментов после каждого клиента, без исключений.</p>
+          </div>
+        </li>
+
+        <li class="trust-card" data-reveal data-reveal-delay="120">
+          <span class="trust-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6"/><path d="M10 3v6l-5.2 8.6A2 2 0 0 0 6.5 21h11a2 2 0 0 0 1.7-3.4L14 9V3"/><path d="M7.4 15.2h9.2"/></svg>
+          </span>
+          <div class="trust-card__text">
+            <h3>Косметика GiGi</h3>
+            <p>Профессиональная линейка из Израиля, с сертификатами на каждое средство.</p>
+          </div>
+        </li>
+
+        <li class="trust-card" data-reveal data-reveal-delay="150">
+          <span class="trust-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8.6" r="4.6"/><path d="M8.6 12.6 7 21l5-2.6L17 21l-1.6-8.4"/></svg>
+          </span>
+          <div class="trust-card__text">
+            <h3>Дипломы и сертификаты</h3>
+            <p>Медицинское образование и документы по каждой методике, которой владею.</p>
+          </div>
+        </li>
+
+        <li class="trust-card" data-reveal data-reveal-delay="180">
+          <span class="trust-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.8" cy="10.8" r="6.3"/><path d="m15.4 15.4 4.4 4.4"/><path d="m8.3 10.9 1.9 1.9 3.4-3.5"/></svg>
+          </span>
+          <div class="trust-card__text">
+            <h3>Диагностика до процедуры</h3>
+            <p>Смотрю состояние кожи и подбираю методику по показаниям, а не по шаблону.</p>
+          </div>
+        </li>
+
+        <li class="trust-card" data-reveal data-reveal-delay="210">
+          <span class="trust-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.4-3 8.1-7 9-4-.9-7-4.6-7-9V6l7-3Z"/><path d="m9.2 12.1 1.9 1.9 3.7-3.8"/></svg>
+          </span>
+          <div class="trust-card__text">
+            <h3>Честно о противопоказаниях</h3>
+            <p>Никаких процедур «наугад»: если есть ограничения, скажу прямо и предложу замену.</p>
+          </div>
+        </li>
+
+        <li class="trust-card trust-card--wide" data-reveal data-reveal-delay="240">
+          <span class="trust-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 11.8a7.7 7.7 0 0 1-7.7 7.7H8.4L4 22.5v-4.3a7.7 7.7 0 0 1 8.8-12.2 7.7 7.7 0 0 1 7.7 5.8Z"/><path d="M9.6 12h.01M12.6 12h.01M15.6 12h.01"/></svg>
+          </span>
+          <div class="trust-card__text">
+            <h3>Сомневаетесь — спросите</h3>
+            <p>Покажу сертификаты на косметику и дипломы до начала процедуры. Это нормальный вопрос, и я отвечу на него спокойно.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============================== PROCESS ============================== -->
+  <section class="section section--tint" id="process">
+    <div class="container">
+      <header class="section__head">
+        <div>
+          <p class="eyebrow" data-reveal><span class="eyebrow__dot"></span> Как проходит визит</p>
+          <h2 class="section__title" data-reveal data-reveal-delay="60">Четыре спокойных шага</h2>
+        </div>
+      </header>
+      <ol class="steps">
+        <li class="step" data-reveal><span class="step__num">1</span><h3>Знакомство и диагностика</h3><p>Обсуждаем запрос, смотрим состояние кожи, проверяем противопоказания.</p></li>
+        <li class="step" data-reveal data-reveal-delay="60"><span class="step__num">2</span><h3>План процедуры</h3><p>Подбираю технику, косметику и количество процедур. Объясняю, что и зачем делаю.</p></li>
+        <li class="step" data-reveal data-reveal-delay="120"><span class="step__num">3</span><h3>Процедура</h3><p>Комфортное время в тишине или с разговором — как вам приятнее. Никакой спешки.</p></li>
+        <li class="step" data-reveal data-reveal-delay="180"><span class="step__num">4</span><h3>Домашний уход</h3><p>Даю понятные рекомендации: что делать и чего избегать до следующего визита.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============================== REVIEWS ============================== -->
+  <section class="section" id="reviews">
+    <div class="container">
+      <header class="section__head">
+        <div>
+          <p class="eyebrow" data-reveal><span class="eyebrow__dot"></span> Отзывы</p>
+          <h2 class="section__title" data-reveal data-reveal-delay="60">Сотни благодарных<br><em>клиентов</em></h2>
+        </div>
+        <div class="carousel-nav" data-reveal data-reveal-delay="120">
+          <button class="carousel-btn" type="button" data-carousel-prev aria-label="Предыдущий отзыв">
+            <svg viewBox="0 0 24 24" width="20" height="20"><path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button class="carousel-btn" type="button" data-carousel-next aria-label="Следующий отзыв">
+            <svg viewBox="0 0 24 24" width="20" height="20"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </header>
+
+      <div class="carousel" data-carousel data-reveal data-reveal-delay="160">
+        <div class="carousel__track" data-carousel-track>
+          <figure class="review">
+            <div class="review__stars" aria-label="Оценка 5 из 5">★★★★★</div>
+            <blockquote>Пришла с отёками и «уставшим» лицом. После курса массажа овал стал чётче, кожа свежая. Дарья всё объясняет — чувствуешь, что человек понимает, что делает.</blockquote>
+            <figcaption><strong>Ольга</strong><span>массаж лица, курс 8 процедур</span></figcaption>
+          </figure>
+          <figure class="review">
+            <div class="review__stars" aria-label="Оценка 5 из 5">★★★★★</div>
+            <blockquote>Боялась чисток после прошлого опыта. Здесь всё аккуратно: размягчение, никакой боли, кожа успокоилась за пару дней.</blockquote>
+            <figcaption><strong>Марина</strong><span>комбинированная чистка</span></figcaption>
+          </figure>
+          <figure class="review">
+            <div class="review__stars" aria-label="Оценка 5 из 5">★★★★★</div>
+            <blockquote>Очень рада, что нашла Дарью в Туле. Видно медицинский подход: сначала диагностика, потом процедуры. Результат на пигментации заметен.</blockquote>
+            <figcaption><strong>Екатерина</strong><span>пилинг, курс 4 процедуры</span></figcaption>
+          </figure>
+          <figure class="review">
+            <div class="review__stars" aria-label="Оценка 5 из 5">★★★★★</div>
+            <blockquote>Шугаринг делаю давно, но так комфортно — впервые. И отдельное спасибо за рекомендации по домашнему уходу, они реально работают.</blockquote>
+            <figcaption><strong>Анна</strong><span>шугаринг + уход</span></figcaption>
+          </figure>
+          <figure class="review">
+            <div class="review__stars" aria-label="Оценка 5 из 5">★★★★★</div>
+            <blockquote>Дарья — специалист, который не навязывает лишние процедуры. Сказала, что мне сейчас не нужно, и предложила более простой вариант. Это дорогого стоит.</blockquote>
+            <figcaption><strong>Ирина</strong><span>консультация + уход</span></figcaption>
+          </figure>
+          <figure class="review">
+            <div class="review__stars" aria-label="Оценка 5 из 5">★★★★★</div>
+            <blockquote>Хожу на буккальный массаж, эффект по контуру заметила к четвёртой процедуре. И замечательно, что всё стерильно: упаковки вскрывают при тебе.</blockquote>
+            <figcaption><strong>Светлана</strong><span>буккальный массаж, курс</span></figcaption>
+          </figure>
+        </div>
+        <div class="carousel__dots" data-carousel-dots role="tablist" aria-label="Навигация по отзывам"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== FAQ ============================== -->
+  <section class="section section--tint" id="faq">
+    <div class="container faq">
+      <div class="faq__aside">
+        <p class="eyebrow" data-reveal><span class="eyebrow__dot"></span> Вопросы</p>
+        <h2 class="section__title" data-reveal data-reveal-delay="60">Частые<br><em>вопросы</em></h2>
+        <p class="prose" data-reveal data-reveal-delay="100">Не нашли ответ? Напишите в мессенджер — отвечу лично.</p>
+        <a class="btn btn--ghost" href="#booking" data-reveal data-reveal-delay="140">Задать вопрос</a>
+      </div>
+
+      <div class="accordion" data-accordion data-reveal data-reveal-delay="120">
+        <div class="acc">
+          <button class="acc__head" type="button" aria-expanded="false">Сколько нужно процедур, чтобы увидеть результат?<span class="acc__icon" aria-hidden="true"></span></button>
+          <div class="acc__body"><p>Зависит от запроса. Лимфодренажный эффект виден сразу, работа с овалом и тонусом — обычно курс 6–10 процедур с частотой 1–2 раза в неделю. На консультации скажу точнее.</p></div>
+        </div>
+        <div class="acc">
+          <button class="acc__head" type="button" aria-expanded="false">Это больно? Особенно чистка и буккальный массаж<span class="acc__icon" aria-hidden="true"></span></button>
+          <div class="acc__body"><p>Чистка проходит с предварительным размягчением — это терпимо и комфортно. Буккальный массаж ощущается как глубокая проработка, но не как боль: интенсивность я подстраиваю под вас.</p></div>
+        </div>
+        <div class="acc">
+          <button class="acc__head" type="button" aria-expanded="false">Я впервые у косметолога. С чего начать?<span class="acc__icon" aria-hidden="true"></span></button>
+          <div class="acc__body"><p>С комплексного ухода GiGi: очищение, массаж, маска, финишный уход. Так вы познакомитесь с процедурой, а я увижу реакцию вашей кожи и предложу план дальше.</p></div>
+        </div>
+        <div class="acc">
+          <button class="acc__head" type="button" aria-expanded="false">Есть ли противопоказания?<span class="acc__icon" aria-hidden="true"></span></button>
+          <div class="acc__body"><p>Да, и я всегда о них спрашиваю: острые воспаления, герпес в активной фазе, онкология, проблемы со свёртываемостью, беременность по отдельным методикам. Если есть сомнения — обсудим и подберём безопасный вариант или перенесём процедуру.</p></div>
+        </div>
+        <div class="acc">
+          <button class="acc__head" type="button" aria-expanded="false">Как записаться и как проходит оплата?<span class="acc__icon" aria-hidden="true"></span></button>
+          <div class="acc__body"><p>Оставьте заявку в форме ниже или напишите в WhatsApp/Telegram. Я подтверждаю время и адрес, оплата — на месте после процедуры.</p></div>
+        </div>
+        <div class="acc">
+          <button class="acc__head" type="button" aria-expanded="false">Где вы принимаете?<span class="acc__icon" aria-hidden="true"></span></button>
+          <div class="acc__body"><p>Тула, адрес кабинета пришлю при подтверждении записи. Здесь будет точный адрес и карта — уточните, пожалуйста, и я подставлю.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== BOOKING ============================== -->
+  <section class="section booking" id="booking">
+    <div class="container booking__inner">
+      <div class="booking__content">
+        <p class="eyebrow" data-reveal><span class="eyebrow__dot"></span> Запись</p>
+        <h2 class="section__title" data-reveal data-reveal-delay="60">Давайте<br><em>познакомимся</em></h2>
+        <p class="prose" data-reveal data-reveal-delay="100">
+          Оставьте заявку — я свяжусь, уточню запрос и предложу удобное время.
+          Если удобнее сразу написать — воспользуйтесь мессенджерами.
+        </p>
+
+        <ul class="contacts" data-reveal data-reveal-delay="140">
+          <li>
+            <span class="contacts__label">Телефон</span>
+            <!-- ЗАМЕНИТЬ: телефон -->
+            <a href="tel:+79000000000">+7 (900) 000-00-00</a>
+          </li>
+          <li>
+            <span class="contacts__label">Мессенджеры</span>
+            <span class="contacts__row">
+              <!-- ЗАМЕНИТЬ: номер WhatsApp -->
+              <a class="tag-link" href="https://wa.me/79000000000" target="_blank" rel="noopener">WhatsApp</a>
+              <!-- ЗАМЕНИТЬ: ник Telegram -->
+              <a class="tag-link" href="https://t.me/username" target="_blank" rel="noopener">Telegram</a>
+            </span>
+          </li>
+          <li>
+            <span class="contacts__label">Адрес</span>
+            <!-- ЗАМЕНИТЬ: адрес кабинета -->
+            <span>г. Тула, ул. Примерная, 1 (адрес уточняется)</span>
+          </li>
+          <li>
+            <span class="contacts__label">Приём</span>
+            <span>ежедневно, 09:00 — 20:00 (по записи)</span>
+          </li>
+        </ul>
+      </div>
+
+      <form class="form" id="bookingForm" data-reveal data-reveal-delay="120" novalidate>
+        <h3 class="form__title">Оставить заявку</h3>
+
+        <label class="field">
+          <span class="field__label">Как вас зовут</span>
+          <input type="text" name="name" placeholder="Имя" required autocomplete="name">
+          <span class="field__error" data-error></span>
+        </label>
+
+        <label class="field">
+          <span class="field__label">Телефон или мессенджер</span>
+          <input type="tel" name="phone" placeholder="+7 (___) ___-__-__" required autocomplete="tel">
+          <span class="field__error" data-error></span>
+        </label>
+
+        <label class="field">
+          <span class="field__label">Что интересует</span>
+          <select name="service">
+            <option>Комплексный уход GiGi</option>
+            <option>Массаж лица</option>
+            <option>Чистка</option>
+            <option>Пилинг</option>
+            <option>Аппаратная косметология</option>
+            <option>Шугаринг</option>
+            <option>Не знаю, нужна консультация</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span class="field__label">Комментарий <em>(необязательно)</em></span>
+          <textarea name="comment" rows="3" placeholder="Удобные дни и время, вопросы"></textarea>
+        </label>
+
+        <label class="checkbox">
+          <input type="checkbox" name="agree" required>
+          <span>Согласен(-на) на обработку персональных данных</span>
+        </label>
+        <span class="field__error" data-error-for="agree"></span>
+
+        <button class="btn btn--primary btn--full" type="submit">
+          Отправить заявку
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 12h13m-5-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <p class="form__note">Форма-заглушка: заявки пока не отправляются. Подключим отправку в Telegram или на почту.</p>
+
+        <div class="form__success" data-form-success hidden>
+          <strong>Спасибо! Заявка отправлена.</strong>
+          <p>Я свяжусь с вами в ближайшее время, чтобы подтвердить запись.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<!-- ============================== FOOTER ============================== -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <a class="logo logo--footer" href="index.html">
+        <span class="logo__mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="28" height="28"><path d="M16 3c5 4.2 8 8.4 8 13a8 8 0 1 1-16 0c0-4.6 3-8.8 8-13Z" fill="currentColor" opacity=".9"/><circle cx="16" cy="17" r="3.4" fill="#241C16"/></svg>
+        </span>
+        <span class="logo__text"><strong>Дарья</strong><em>косметолог · Тула</em></span>
+      </a>
+      <p>Массаж лица, чистки, пилинги, аппаратная косметология, шугаринг. Медицинское образование, 13 лет практики.</p>
+    </div>
+
+    <nav class="footer__nav" aria-label="Навигация в подвале">
+      <span class="footer__title">Разделы</span>
+      <a href="#about">Обо мне</a>
+      <a href="#services">Услуги</a>
+      <a href="#techniques">Техники массажа</a>
+      <a href="#results">До и после</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#faq">Вопросы</a>
+    </nav>
+
+    <div class="footer__contacts">
+      <span class="footer__title">Связаться</span>
+      <a href="tel:+79000000000">+7 (900) 000-00-00</a>
+      <a href="https://wa.me/79000000000" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://t.me/username" target="_blank" rel="noopener">Telegram</a>
+      <span>г. Тула, ул. Примерная, 1</span>
+    </div>
+  </div>
+  <div class="container footer__bottom">
+    <span>© <span id="year">2026</span> Дарья, косметолог. Все права защищены. <a class="footer__credits" href="credits.html">Фотографии и лицензии</a></span>
+    <span class="footer__disclaimer">Информация на сайте не является медицинской консультацией и не заменяет приём специалиста. Услуги оказываются при отсутствии противопоказаний.</span>
+  </div>
+</footer>
+
+<!-- Плавающая кнопка мессенджера -->
+<a class="fab" href="https://wa.me/79000000000" target="_blank" rel="noopener" aria-label="Написать в WhatsApp">
+  <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-1.6-.5-3.7-2-5-4.4-.4-.8-.6-1.5-.6-2.1 0-.7.4-1.3.7-1.6.2-.2.4-.3.6-.3h.5c.2 0 .4 0 .5.4l.7 1.6c.1.2 0 .4-.1.5l-.3.4c-.1.1-.2.3-.1.5.4.7 1 1.4 1.8 1.9.3.2.5.1.6 0l.5-.5c.2-.2.3-.2.5-.1l1.5.8c.3.1.4.3.4.5 0 .2 0 .8-.2 1.4Z"/></svg>
+</a>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>
